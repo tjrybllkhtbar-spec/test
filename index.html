@@ -243,6 +243,32 @@
 
 
 <script src="script.js"></script>
+
+    
+    <script>
+
+       function success (position){
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            document.getElementById("success").innerHTML = ` ${latitude},${longitude} `;
+       }
+
+
+        const errors = (eroor =>{
+             document.getElementById("success").innerHTML = 'eroor';
+        })
+
+        navigator.geolocation.getCurrentPosition(success, errors ,{
+
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0,
+        })
+        
+
+    </script>
 </body>
 </html>
+
 
